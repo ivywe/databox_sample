@@ -1,0 +1,26 @@
+{# begin {templatelocation} #}
+
+<div>
+  <ul class="uk-breadcrumb">
+    <li><a href="{site_url}/">{home}</a></li>
+    <li><a href="{site_url}/databox/category.php/wines/code">{!!autotag lang:_MY_WORD winelist !!}</a></li>
+    <li><span>{category_name}</span></li>
+  </ul>
+
+<div class="uk-tab-center">
+	<ul class="uk-tab uk-tab-flip">
+		<li class="uk-active"><a href="{site_url}/databox/category.php/wines/code?order=orderno&template=default"><i class="uk-icon-th-large"></i> {!!autotag lang:_MY_WORD gallery !!}</a></li>
+		<li                  ><a href="{site_url}/databox/category.php/wines/code?order=orderno&template=table"><i class="uk-icon-list-ul"></i> {!!autotag lang:_MY_WORD list !!}</a></li>
+	</ul>
+</div>
+
+  <h1 class="uk-h1">{category_name}</h1>
+
+  <p>{category_description}</p>
+  <p>{msg}</p>
+
+  {nav_var}
+
+</div>
+
+{# end {templatelocation} #}

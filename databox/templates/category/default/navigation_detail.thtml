@@ -1,0 +1,15 @@
+{# begin {templatelocation} #}
+
+{!!if {category_name} == "Wines " !!}
+<div id="my-id" class="gl-filter uk-margin-bottom">
+<!-- Filter Controls -->
+{!!autotag lang:_MY_WORD winefilerlist !!}
+</div>
+{!endif}
+
+<!-- Dynamic Grid -->
+<div class="uk-margin-small-left" data-uk-grid="{ gutter: 20, controls: '#my-id' }">
+    {row_var}
+</div>
+
+{# end {templatelocation} #}

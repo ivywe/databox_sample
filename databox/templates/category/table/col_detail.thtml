@@ -1,0 +1,88 @@
+{# begin {templatelocation} #}
+
+<div data-uk-filter="{group_brand_code},{group_variety_code},{group_level_code},{group_winning_code}">
+
+<div class="uk-text-center uk-text-small uk-text-danger">{grouplink_brand} | {grouplink_variety} | {grouplink_level}{!if grouplink_winning} | {grouplink_winning}{!endif}</div>
+<div class="uk-text-small uk-button uk-button-small uk-width-1-1 uk-button-primary gl-button uk-margin-small-bottom uk-text-bold uk-margin-remove" style=" padding-top:3px">
+
+{!if data_edit}[ {data_code} ]  {!endif}
+<a href="{data_url}" style="color:white">{title_es}</a> / <a href="{data_url}" style="color:white">{title_ja}</a></div>
+
+<table class="uk-table gl-table uk-margin-remove" style="border-top:1px solid #e0e0e0; border-left:1px solid #e0e0e0">
+<tr>
+
+	<td class="uk-text-center uk-hidden-small" style="width:100px; border-right:1px solid #e0e0e0">
+<div>
+{!!if {group_level_pipeline} == "granreselva" !!}<i class="uk-icon-dashboard uk-text-warning"></i><i class="uk-icon-dashboard uk-text-warning"></i><i class="uk-icon-dashboard uk-text-warning"></i>{!endif}
+{!!if {group_level_pipeline} == "reselva" !!}<i class="uk-icon-dashboard uk-text-warning"></i><i class="uk-icon-dashboard uk-text-warning"></i>{!endif}
+</div>
+<a href="{data_url}">{!!autotag media:'.{mediaid}.' src:tn !!} </a>
+
+</td>
+  <td class="uk-text-small" style="width:200px; border-right:1px solid #e0e0e0">
+<h4 data-uk-tooltip title="{!!autotag lang:_MY_WORD variety !!}<br>{!!autotag lang:_MY_WORD appellation !!}<br>{!!autotag lang:_MY_WORD winemaker !!}<br>{!!autotag lang:_MY_WORD bottling !!}<br>{!!autotag lang:_MY_WORD alcohol !!}">{!!autotag lang:_MY_WORD titleoutline !!}</h4></h4>
+
+<div class="uk-visible-small">
+<div class="uk-text-center">
+{!!if {group_level_pipeline} == "granreselva" !!}<i class="uk-icon-dashboard uk-text-warning"></i><i class="uk-icon-dashboard uk-text-warning"></i><i class="uk-icon-dashboard uk-text-warning"></i>{!endif}
+{!!if {group_level_pipeline} == "reselva" !!}<i class="uk-icon-dashboard uk-text-warning"></i><i class="uk-icon-dashboard uk-text-warning"></i>{!endif}
+</div>
+<div class="uk-text-center">
+<a href="{data_url}">{!!autotag media:'.{mediaid}.' src:tn !!} </a>
+</div>
+</div>
+
+{!if group_winning_code}<div class="uk-text-center"><a href="http://jp.japanwinechallenge.com/" target="_blank"><img src="https://ivino.ivywe.co.jp/mediagallery/mediaobjects/orig/d/d_lavel2014.png" style="width:120px" alt="Japan WINE CHALLENGE 2014 BRONZE" data-uk-tooltip title="Japan WINE CHALLENGE 2014 BRONZE"></a></div>{!endif}
+		<ul>
+			<li data-uk-tooltip title="{!!autotag lang:_MY_WORD variety !!}">{variety}</li>
+			{!if apperacion}<li data-uk-tooltip title="{!!autotag lang:_MY_WORD appellation !!}">{apperacion}</li>{!endif}
+			{!if winemaker}<li data-uk-tooltip title="{!!autotag lang:_MY_WORD winemaker !!}">{winemaker}</li>{!endif}
+			{!if bottling}<li data-uk-tooltip title="{!!autotag lang:_MY_WORD bottling !!}">{bottling}</li>{!endif}
+			{!if alcohol}<li data-uk-tooltip title="{!!autotag lang:_MY_WORD alcohol !!}">{alcohol}</li>{!endif}
+		</ul>
+
+{!if pdf}<div class="uk-text-center"><a href="{pdf}" class="uk-button uk-button-small uk-button-primary">pdf</a></div>{!endif}
+
+{data_edit}
+	</td>
+  <td class="uk-text-small" style="width:200px; border-right:1px solid #e0e0e0">
+{!if description2_en}<h4>{!!autotag lang:_MY_WORD titlespecial !!}</h4>{!endif}
+<?php
+$var = $this->get_var('description2_'. COM_getLanguageId()); 
+$length = 150; $encoding = 'utf-8'; echo mb_strimwidth( stripslashes( $var ), 0, $length, '...', $encoding);
+?>
+{!if vinification_en}<h4>{!!autotag lang:_MY_WORD titlevinification !!}</h4>{!endif}
+<?php
+$var = $this->get_var('vinification_'. COM_getLanguageId()); 
+$length = 150; $encoding = 'utf-8'; echo mb_strimwidth( stripslashes( $var ), 0, $length, '...', $encoding);
+?>
+	</td>
+  <td class="uk-text-small" style="width:200px; border-right:1px solid #e0e0e0">
+
+{!if vineyards_en}<h4>{!!autotag lang:_MY_WORD titlevineyards !!}</h4>{!endif}
+<?php
+$var = $this->get_var('vineyards_'. COM_getLanguageId()); 
+$length = 150; $encoding = 'utf-8'; echo mb_strimwidth( stripslashes( $var ), 0, $length, '...', $encoding);
+?>
+{!if climate_en}<h4>{!!autotag lang:_MY_WORD titleclimate !!}</h4>{!endif}
+<?php
+$var = $this->get_var('climate_'. COM_getLanguageId()); 
+$length = 150; $encoding = 'utf-8'; echo mb_strimwidth( stripslashes( $var ), 0, $length, '...', $encoding);
+?>
+</td>
+  <td class="uk-text-small" style="width:200px; border-right:1px solid #e0e0e0">
+{!if notes_en}<h4>{!!autotag lang:_MY_WORD titlenotes !!}</h4>{!endif}
+<?php
+$var = $this->get_var('notes_'. COM_getLanguageId()); 
+$length = 220; $encoding = 'utf-8'; echo mb_strimwidth( stripslashes( $var ), 0, $length, '...', $encoding);
+?>
+
+{!if recommended}<h4>{!!autotag lang:_MY_WORD titletemperature !!}</h4><ul><li>{recommended}</li></ul>{!endif}
+
+</td>
+</tr>
+</table>
+
+</div>
+
+{# end {templatelocation} #}

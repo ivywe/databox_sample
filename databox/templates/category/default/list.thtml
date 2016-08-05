@@ -1,0 +1,18 @@
+{# begin {templatelocation} #}
+
+<div>
+
+  <ul class="uk-breadcrumb">
+    <li><a href="{site_url}/">{home}</a></li>
+    <li><span>{lang_category_list_h2}</span></li>
+  </ul>
+
+  <h1 class="uk-h1">{lang_category_list_h2}</h1>
+
+  <p>{msg}</p>
+
+  {nav_var}
+
+</div>
+
+{# end {templatelocation} #}

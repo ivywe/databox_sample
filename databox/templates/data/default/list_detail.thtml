@@ -1,0 +1,70 @@
+{# begin {templatelocation} #}
+
+{edit} {draft}
+
+  <ul class="uk-breadcrumb">
+    <li><a href="{site_url}/">HOME{home}</a></li>
+    <li><a href="{site_url}/databox/category.php/wines/code">{!!autotag lang:_MY_WORD winelist !!}</a></li>
+    <li>{categorieslinkcode}</li>
+    <li><span>{title}</span></li>
+  </ul>
+
+  <h1 class="uk-h1 uk-margin-remove">{!!if {languageid} == "ja" !!}{title_ja}{!else}{title_es}{!endif}</h1>
+	<div class="gl-title uk-margin-large-bottom">{!!if {languageid} == "ja" !!}{title_es}{!else}{title_ja}{!endif}</div>
+
+<div class="uk-grid">
+	<div class="uk-width-medium-1-4 uk-text-center">
+		{!!autotag media:'.{mediaid}.' src:disp !!}
+		<div><a href="{pdf}" class="uk-button">PDF</a></div>
+
+	</div>
+	<div class="uk-width-medium-3-4">
+		<dl class="uk-description-list-line">
+			<dt>{!!autotag lang:_MY_WORD level !!}</dt><dd>{group_level}</dd>
+			<dt>{!!autotag lang:_MY_WORD variety !!}</dt><dd>{variety}</dd>
+			{!if apperacion}<dt>{!!autotag lang:_MY_WORD appellation !!}</dt><dd>{apperacion}</dd>{!endif}
+			{!if winemaker}<dt>{!!autotag lang:_MY_WORD winemaker !!}</dt><dd>{winemaker}</dd>{!endif}
+			{!if bottling}<dt>{!!autotag lang:_MY_WORD bottling !!}</dt><dd>{bottling}</dd>{!endif}
+			{!if alcohol}<dt>{!!autotag lang:_MY_WORD alcohol !!}</dt><dd>{alcohol}</dd>{!endif}
+		</dl>
+
+{!if description2_en}
+		<h3 class="uk-margin-large-top">{!!autotag lang:_MY_WORD characteristics !!}</h3>
+{!endif}
+<div><?php echo $this->get_var('description2_'. COM_getLanguageId() ); ?></div>
+
+{!if vineyards_en}
+		<h3 class="uk-margin-large-top">{!!autotag lang:_MY_WORD vineyards !!}</h3>
+{!endif}
+<div><?php echo $this->get_var('vineyards_'. COM_getLanguageId() ); ?></div>
+
+{!if climate_en}
+		<h3 class="uk-margin-large-top">{!!autotag lang:_MY_WORD climate !!}</h3>
+{!endif}
+<div><?php echo $this->get_var('climate_'. COM_getLanguageId()); ?></div>
+
+{!if vinification_en}
+		<h3 class="uk-margin-large-top">{!!autotag lang:_MY_WORD vinification !!}</h3>
+{!endif}
+<div><?php echo $this->get_var('vinification_'. COM_getLanguageId()); ?></div>
+
+{!if notes_en}
+		<h3 class="uk-margin-large-top">{!!autotag lang:_MY_WORD notes !!}</h3>
+{!endif}
+<div><?php echo $this->get_var('notes_'. COM_getLanguageId()); ?></div>
+
+		<h3 class="uk-margin-large-top">{!!autotag lang:_MY_WORD recommended !!}</h3>
+			<div>{recommended}</div>
+
+	</div>
+</div>
+
+<div class="uk-margin-large">
+	{!!autotag medialist:'.{albumid}.' theme:leftimages !!}
+</div>
+
+{edit} {draft}
+
+
+
+{# end {templatelocation} #}

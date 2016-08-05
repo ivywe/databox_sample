@@ -1,0 +1,20 @@
+{# begin {templatelocation} #}
+
+<div class="uk-panel-box uk-margin-bottom uk-margin-left" data-uk-filter="{group_brand_code},{group_variety_code},{group_level_code},{group_winning_code}">
+  <div class="uk-text-small uk-button uk-button-small uk-button-danger" style="width:200px">
+	<a href="{data_url}" style="color:white">
+<?php if( !strcmp( COM_getLanguageId(), "ja" )) { ?>{title_ja}<?php } else { ?>{title_es}<?php } ?>
+</a>
+	</div>
+	<div class="uk-text-small uk-text-danger uk-text-left" style="width:200px">
+<?php if( !strcmp( COM_getLanguageId(), "ja" )){ ?>{title_es}<?php } else { ?>{title_ja}<?php } ?>
+</div>
+	<div class="uk-float-right">{data_edit}</div>
+	<div class="uk-text-small uk-text-center" style="width:200px">{grouplink_brand} | {grouplink_variety} | {grouplink_level}</div>
+
+{!if group_winning_code}<div class="uk-text-center"><a href="http://jp.japanwinechallenge.com/" target="_blank"><img src="https://ivino.ivywe.co.jp/mediagallery/mediaobjects/orig/d/d_lavel2014.png" style="width:120px; margin-top:3px" alt="Japan WINE CHALLENGE 2014 BRONZE" data-uk-tooltip title="Japan WINE CHALLENGE 2014 BRONZE"></a></div>{!endif}
+
+	<div class="uk-text-center"><a href="{data_url}"> {!!autotag media:'.{mediaid}.' src:tn !!} </a></div>
+</div>
+
+{# end {templatelocation} #}

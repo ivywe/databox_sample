@@ -15,3 +15,11 @@ Ivywe Customisation: https://github.com/ivywe/geeklog-ivywe</p>
 https://ivino.ivywe.co.jp/databox/category.php/wines/code?order=orderno&template=default<br>
 https://ivino.ivywe.co.jp/databox/category.php/wines/code?order=orderno&template=table<br>
 https://ivino.ivywe.co.jp/databox/data.php/18grre-1/code</p>
+
+<h2>files</h2>
+<dl>
+<dt>templates</dt><dd>/templates</dd>
+<dt>sql</dt><dd>/databox_sample.sql</dd>
+<dt>add to language</dt><dd>/language/japanese_utf-8.php</dd><dd>/language/english_utf-8.php</dd>
+</dl>
+
